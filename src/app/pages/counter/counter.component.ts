@@ -1,14 +1,37 @@
 import { Component } from "@angular/core";
 
 @Component({
-    template: ` <h1>Counter {{ counter }} </h1>
-<button (click)="counter = counter + 1">Aumentar</button>
-<button (click)="counter = counter - 1">Disminuir</button>
-<button (click)="counter = counter * 2">Duplicar</button>
-<button (click)="counter = counter / 2">Dividir</button>
-<button (click)="counter = 0">Reiniciar</button>
-`
+templateUrl: './counter.component.html',
+styles: [`
+// styles for the text
+h1 {
+    font-size: 40px;
+    color: linear-gradient(to right, blue, white);
+    text-shadow: 0 0 5px deepskyblue;
+    text-align: left;
+    }
+    //there are some styles for the buttons and i try to make them look nice
+button {
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px deepskyblue;
+    margin: 10px;
+    background: linear-gradient(to right, lightblue, white);
+    border: neonblue solid 2px;
+}
+button:hover {
+    background-color: deepskyblue;
+
+}
+
+
+`]
 })
+//add new varaible called text 
 export class CounterComponent {
-    counter = 10;
+    counter = 80;
+     text = 'El numero actual es:';
 }

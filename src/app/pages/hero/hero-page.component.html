@@ -1,25 +1,28 @@
-<h1>{{ name }}</h1>
-
+<div style="text-align: center; justify-items: center;">
+<h1>{{ name() }}</h1>
+<br>
 <dl>
   <td>Nombre:</td>
-  <dd>{{ name }}</dd>
+  <dd>{{ name() }}</dd>
 
   <td>Edad:</td>
-  <dd>{{ age }}</dd>
-
-  <td>Método:</td>
-  <dd>{{ getHeroDescription() }}</dd>
+  <dd>{{ age() }}</dd>
+<br>
+  <td>Datos Actuales:</td>
+  <dd>{{ HeroDescription() }}</dd>
 
   <td>Capitalizado:</td>
-  <!-- ! Intentar  -->
-  <dd> {{ capitalizedName }} </dd>
+  <!-- <dd> {{ capitalizedName() }} </dd> -->
+   <dd>{{name() | uppercase}}</dd>
 </dl>
+<br>
 
 <button (click)="changeHero()" class="btn btn-primary mx-2">
   Cambiar nombre
 </button>
 
-<button class="btn btn-primary">cambiar edad</button>
-<button class="btn btn-primary">Cambiar edad</button>
+<button class="btn btn-primary" (click)="changeAge()">Cambiar edad</button>
 
 <button (click)="resetForm()" class="btn btn-primary mx-2">Reset</button>
+</div>
+<br><br>

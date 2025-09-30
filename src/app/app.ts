@@ -5,6 +5,21 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
+  styles: [`
+    nav {
+      padding: 10px;  
+      background-color: gray;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    footer {
+      padding: 10px;  
+      background-color: gray;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+  `],
 })
 export class App {
   protected readonly title = signal('wboncin');

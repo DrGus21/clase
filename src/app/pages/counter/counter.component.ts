@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
 
 @Component({
 templateUrl: './counter.component.html',
@@ -28,10 +28,25 @@ button:hover {
 }
 
 
-`]
+`],
+changeDetection: ChangeDetectionStrategy.OnPush,
 })
 //add new varaible called text 
 export class CounterComponent {
-    counter = 80;
+    counter = 10;
      text = 'El numero actual es:';
+    counterSignal= signal(10);
+
+     constructor() {
+    setInterval(() => {
+        // this.counter += 1;
+        this.counterSignal.update((v) => v + 1);
+        console.log('tick');
+    }, 2000);
+    }
+
+    increaseBy(value: number) {
+        this.counter += value;
+        this.counterSignal.update((current) => current + value);
+    }
 }

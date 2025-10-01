@@ -3,14 +3,6 @@ import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
 @Component({
 templateUrl: './counter.component.html',
 styles: [`
-// styles for the text
-h1 {
-    font-size: 40px;
-    color: linear-gradient(to right, blue, white);
-    text-shadow: 0 0 5px deepskyblue;
-    text-align: left;
-    }
-    //there are some styles for the buttons and i try to make them look nice
 button {
     font-size: 20px;
     margin-top: 20px;
@@ -26,7 +18,12 @@ button:hover {
     background-color: deepskyblue;
 
 }
-
+h1 {
+    font-size: 40px;
+    color: white;
+    text-shadow: 0 0 5px deepskyblue;
+    text-align: left;
+    }
 
 `],
 changeDetection: ChangeDetectionStrategy.OnPush,

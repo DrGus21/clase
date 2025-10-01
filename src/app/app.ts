@@ -1,17 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Navbar } from "./components/shared/navbar/navbar";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Navbar],
   templateUrl: './app.html',
   styles: [`
-    nav {
-      padding: 10px;  
-      background-color: gray;
-      font-size: 20px;
-      font-weight: bold;
-    }
+ 
     footer {
       padding: 10px;  
       background-color: gray;

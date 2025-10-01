@@ -1,0 +1,57 @@
+<h1>DrGus21</h1>
+<hr />
+
+<section class="row">
+    <!-- <div class="container text-center col-12 col-sm-6">
+        <h2>One Piece</h2>
+        <h3>El manga más vendido de la historia</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/65/One_Piece_Logo.svg" alt="One Piece Logo" width="300">
+        <p>One Piece es una serie de manga y anime creada por Eiichiro Oda. La historia sigue las aventuras de Monkey D. Luffy y su tripulación de piratas en su búsqueda del tesoro legendario conocido como "One Piece".</p>
+        <p>Desde su debut en 1997, One Piece se ha convertido en una de las series de manga y anime más populares y exitosas del mundo, con millones de seguidores en todo el mundo.</p>
+        <p>La serie es conocida por su narrativa épica, personajes memorables y un mundo vasto y detallado lleno de islas únicas, culturas diversas y poderes sobrenaturales.</p>
+        <p>One Piece ha sido adaptada a varios formatos, incluyendo películas, videojuegos y novelas ligeras, y continúa siendo una parte importante de la cultura pop japonesa.</p>
+
+    </div> -->
+    <div class="container text-center col-12 col-sm-6">
+      <h3>Agregar: {{ name() }}</h3>
+      <h3>Agregar: {{ age() }}</h3>
+      <input type="text" 
+      class="form-control"
+      placeholder="Nombre" 
+      name="name"
+      [value]="name()"
+      (change)="name.set(txtName.value)"
+      (input)="name.set(txtName.value)"
+       #txtName
+      />
+
+
+      <input 
+      type="number" 
+      class="form-control" 
+      placeholder="Edad del personaje" 
+      name="age" 
+      [value]="age()"
+      (change)="age.set(txtAge.value)"
+      (input)="age.set(txtAge.value)"
+      #txtAge
+      />
+<button class="btn btn-primary mt-2" (click)="addCharacter()">Agregar</button>
+    </div>
+
+    <div class=" text-center col-12 col-sm-6">
+        <h2>Personajes Principales</h2>
+        <ul >
+          @for (character of characters(); track character.id; let idx = $index) {
+            @if (character.age >= 18) {
+            <li>
+                        <span>{{ idx + 1 }}-
+                        {{ character.name }} - {{ character.age }} años
+                        </span>
+                    </li>
+            }
+                        
+          }
+        </ul>
+    </div>
+</section>

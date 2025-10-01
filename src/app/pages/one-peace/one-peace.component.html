@@ -1,0 +1,47 @@
+<h1>DrGus21</h1>
+<hr />
+
+<section class="row">
+    <div class="container text-center col-12 col-sm-6">
+      <h3>Agregar: {{ name() }}</h3>
+      <h3>Agregar: {{ age() }}</h3>
+      <input type="text" 
+      class="form-control"
+      placeholder="Nombre" 
+      name="name"
+      [value]="name()"
+      (change)="name.set(txtName.value)"
+      (input)="name.set(txtName.value)"
+       #txtName
+      />
+
+
+      <input 
+      type="number" 
+      class="form-control" 
+      placeholder="Edad del personaje" 
+      name="age" 
+      [value]="age()"
+      (change)="age.set(txtAge.value)"
+      (input)="age.set(txtAge.value)"
+      #txtAge
+      />
+<button class="btn btn-primary mt-2" (click)="addCharacter()">Agregar</button>
+    </div>
+
+    <div class=" text-center col-12 col-sm-6">
+        <h2>Personajes Principales</h2>
+        <ul >
+          @for (character of characters(); track character.id; let idx = $index) {
+            @if (character.age >= 18) {
+            <li>
+                        <span>{{ idx + 1 }}-
+                        {{ character.name }} - {{ character.age }} años
+                        </span>
+                    </li>
+            }
+                        
+          }
+        </ul>
+    </div>
+</section>

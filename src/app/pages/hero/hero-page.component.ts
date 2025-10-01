@@ -80,5 +80,18 @@ export class HeroPageComponent {
             this.age.set(45);
         }
     }
-
+    // imageUrl = computed(() => {
+    //     switch (this.name()) {
+    //       case 'Ironman':
+    //         return 'https://i0.wp.com/www.tonica.la/__export/1618886003387/sites/debate/img/2021/04/19/ironman.jpg_423682103.jpg';
+    //       case 'Spiderman':
+    //         return 'https://i0.wp.com/hipertextual.com/wp-content/uploads/2021/12/spiderman-no-way-home-1.jpg?fit=1200%2C675&ssl=1';
+    //       case 'Hulk':
+    //         return 'https://sm.ign.com/ign_es/screenshot/default/hulk_5y6t.jpg';
+    //       case 'Thor':
+    //         return 'https://i0.wp.com/hipertextual.com/wp-content/uploads/2022/07/thor-love-and-thunder-1.jpg?fit=1200%2C675&ssl=1';
+    //       default:
+    //         return '';
+    //     }
+    //   });
 }

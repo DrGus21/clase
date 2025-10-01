@@ -1,0 +1,30 @@
+<style>
+    nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #212121;
+    color: white;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+</style>
+
+<nav>
+    <a routerLink="/" routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">inicio</a> | 
+    <a routerLink="/" routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">contador</a> | 
+    <a routerLink="/hero" routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">hero</a> | 
+    <a routerLink="/one-piece" routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">juanpiz</a> | 
+    <a [routerLink]="['/one-peace']" [routerLinkActive]="'active'"
+    [routerLinkActiveOptions]="{ exact: true }">cosas</a>
+</nav>
